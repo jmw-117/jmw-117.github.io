@@ -1,12 +1,17 @@
 import type { Metadata } from 'next';
+import content from '../lib/site-content.json';
 import './globals.css';
+
 export const metadata: Metadata = {
- metadataBase: new URL('https://john-wilson.well-song-2899.chatgpt.site'),
- title:'John Wilson | Technology Leadership & Solution Architecture',
- description:'Technology leader with 10+ years of international experience across solution architecture, engineering, cloud and enterprise delivery. Explore John Wilson’s experience and AI transformation focus.',
- alternates:{canonical:'/'},
- openGraph:{title:'John Wilson | Business clarity. Technical depth.',description:'Technology leadership, solution architecture and disciplined delivery.',type:'website',locale:'en_GB',url:'/'},
- twitter:{card:'summary',title:'John Wilson | Technology Leadership',description:'Business clarity. Technical depth.'},
- icons:{icon:'/favicon.svg'}
+  metadataBase: new URL(content.origin),
+  title: content.title,
+  description: content.description,
+  alternates: { canonical: '/' },
+  openGraph: { title: content.title, description: content.description, type: 'website', locale: 'en_GB', url: '/', images: [{ url: '/john-wilson.jpg', alt: 'John Wilson' }] },
+  twitter: { card: 'summary', title: content.title, description: content.description },
+  icons: { icon: '/favicon.svg' },
 };
-export default function RootLayout({children}:Readonly<{children:React.ReactNode}>){return <html lang="en-GB"><body>{children}</body></html>}
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en-GB"><body>{children}</body></html>;
+}
