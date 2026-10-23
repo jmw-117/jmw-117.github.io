@@ -45,7 +45,7 @@ function Portrait() {
 
 function Experience() {
   return <section id="experience" className="section wrap" aria-labelledby="experience-title">
-    <h2 id="experience-title">Selected experience.</h2>
+    <h2 id="experience-title">Career Experience</h2>
     <div className="careers">{content.careers.map(career => <article className="career" key={career.company}>
       <div className="company-logo"><img src={career.logo} alt={career.company} width="150" height="72" loading="lazy" decoding="async" /></div>
       <div className="career-copy"><h3>{career.role}</h3><p>{career.summary}</p></div>
