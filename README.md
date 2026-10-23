@@ -22,7 +22,9 @@ The optional `JW_BUILD_MODULES` environment variable points to an alternative no
 - `public/`: original portrait, original company/university logos, latest supplied CV and compressed architectural illustration.
 - `public/_headers`: requested static hosting response headers, including the CV attachment filename.
 
-Navy is #0e1828. Sans and monospace stacks follow the owner's exact supplied tokens and load system fonts only. The circular portrait retains its white border and is 25% smaller than the preceding approved design: 210px desktop, 186px tablet and 150px mobile. No experience-duration, team-size or speed statistics are displayed.
+Navy is #0e1828. Sans and monospace stacks follow the owner's exact supplied tokens and load system fonts only. Stronger heading weights and darker supporting text improve visual definition without text shadows or rasterised lettering. The page and social title is John Wilson | CTO; capability headings use AI Platforms, Cloud Architecture and Engineering Leadership.
+
+The original circular photograph has a crisp SVG frame inspired by the supplied Open to Work reference, with a white edge, green lower ring and curved #OPENTOWORK label. The whole portrait is 25% larger to accommodate the frame: 262.5px desktop, 232.5px tablet and 187.5px mobile. Its accessible name includes open-to-work status. No experience-duration, team-size or speed statistics are displayed.
 
 ImBalance and IRIS logos remain the original files. The CV and portrait are byte-identical to the supplied originals. Contact opens the visitor's mail application; certifications use native disclosure.
 
@@ -31,8 +33,8 @@ ImBalance and IRIS logos remain the original files. The CV and portrait are byte
 PASS: production build and strict type checking of page/layout.
 PASS: Microsoft Edge rendering at 320, 375, 390, 430, 768, 1024, 1280, 1440 and 1920px; no horizontal overflow or broken images. Desktop, tablet and mobile screenshots were visually reviewed for hierarchy, alignment, image scale and cropping, exact logos, typography and responsive content order.
 PASS: keyboard skip link, section navigation, native certification disclosure, reduced motion, back-to-top, contact destinations and both CV downloads, with downloaded bytes compared against the supplied PDF.
-PASS: axe scans for WCAG 2.2 AA-related rules at 320, 390, 768 and 1440px returned zero violations or incomplete results. This is automated testing, not accessibility certification.
-PASS: one local Lighthouse mobile run scored 100 in performance, accessibility, best practices and SEO; simulated LCP 1.7s, total blocking time 0ms and CLS 0.
+PASS: axe scans for WCAG 2.2 AA-related rules at 320, 390, 768 and 1440px returned zero violations. The curved SVG label required manual contrast review: all character bounds fall within the solid green band, with white-on-green contrast of 6.01:1. This is automated and targeted manual testing, not accessibility certification.
+BASELINE: before the later title, typography and portrait-frame refinements, one local Lighthouse mobile run scored 100 in performance, accessibility, best practices and SEO; simulated LCP 1.7s, total blocking time 0ms and CLS 0. The small refinements retain static rendering with zero client JavaScript; Lighthouse was not rerun for them.
 NOT VERIFIED: field Core Web Vitals, real-user INP, Safari/Firefox rendering, assistive-technology testing, email delivery and production enforcement of requested response headers. Local Lighthouse results do not establish real-user performance.
 
 Evidence is retained in the chat's local visualization folder, including responsive screenshots, `qa-result.json`, `axe-results.json` and `lighthouse-mobile.json`.

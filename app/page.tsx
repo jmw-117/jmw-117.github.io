@@ -25,6 +25,24 @@ function CVLink({ className = '' }: { className?: string }) {
   return <a className={className} href={content.cv} download="John_Wilson_CV.pdf"><Icon name="download" />Download CV</a>;
 }
 
+function Portrait() {
+  return <div className="portrait" role="img" aria-label="John Wilson — open to work">
+    <img className="portrait-photo" src="/john-wilson.jpg" alt="" width="294" height="336" fetchPriority="high" decoding="async" />
+    <svg className="portrait-frame" viewBox="0 0 210 210" width="210" height="210" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="availability-ring" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="58%" stopColor="var(--available)" />
+          <stop offset="74%" stopColor="var(--frame-neutral)" />
+        </linearGradient>
+        <path id="availability-label" d="M11 105a94 94 0 0 0 188 0" />
+      </defs>
+      <circle cx="105" cy="105" r="103.5" fill="none" stroke="var(--white)" strokeWidth="3" />
+      <circle cx="105" cy="105" r="89" fill="none" stroke="url(#availability-ring)" strokeWidth="28" />
+      <text className="portrait-label" fill="var(--white)"><textPath href="#availability-label" startOffset="50%" textAnchor="middle">#OPENTOWORK</textPath></text>
+    </svg>
+  </div>;
+}
+
 function Experience() {
   return <section id="experience" className="section wrap" aria-labelledby="experience-title">
     <h2 id="experience-title">Selected experience.</h2>
@@ -37,9 +55,9 @@ function Experience() {
 }
 
 const capabilities: { icon: IconName; title: string; description: string; technologies: string }[] = [
-  { icon: 'nodes', title: 'AI platforms', description: 'Intelligent workflows. Practical outcomes.', technologies: 'Agentic AI · RAG · MCP' },
-  { icon: 'layers', title: 'Cloud architecture', description: 'Secure, resilient systems built to scale.', technologies: 'Azure · GCP · Kubernetes' },
-  { icon: 'code', title: 'Engineering leadership', description: 'Hands-on engineering. Disciplined delivery.', technologies: 'React · TypeScript · DevSecOps' },
+  { icon: 'nodes', title: 'AI Platforms', description: 'Intelligent workflows. Practical outcomes.', technologies: 'Agentic AI · RAG · MCP' },
+  { icon: 'layers', title: 'Cloud Architecture', description: 'Secure, resilient systems built to scale.', technologies: 'Azure · GCP · Kubernetes' },
+  { icon: 'code', title: 'Engineering Leadership', description: 'Hands-on engineering. Disciplined delivery.', technologies: 'React · TypeScript · DevSecOps' },
 ];
 
 function Expertise() {
@@ -79,7 +97,7 @@ export default function Home() {
     <main id="main" tabIndex={-1}>
       <div className="navy"><section className="hero wrap" aria-labelledby="intro">
         <div className="hero-copy"><h1 id="intro">Business <span>clarity.</span><br /><span>Technical</span> depth.</h1><p className="role-line">CTO · Solution Architect · Software Developer</p><p className="hero-description">Connecting business strategy, AI and engineering.</p><div className="actions"><ContactLink /><CVLink className="button secondary" /></div></div>
-        <img className="portrait" src="/john-wilson.jpg" alt="John Wilson" width="294" height="336" fetchPriority="high" decoding="async" />
+        <Portrait />
       </section></div>
       <Experience /><Expertise /><About /><Writing />
       <div className="navy"><section id="contact" className="section wrap contact" aria-labelledby="contact-title"><h2 id="contact-title">Let’s build what comes <span>next.</span></h2><div className="contact-row"><ContactLink /><div className="social"><a href={content.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <Icon name="arrow" /></a><a href={content.github} target="_blank" rel="noopener noreferrer">GitHub <Icon name="arrow" /></a><CVLink /></div></div></section></div>
