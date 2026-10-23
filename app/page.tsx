@@ -93,7 +93,7 @@ function Writing() {
 export default function Home() {
   return <>
     <a className="skip" href="#main">Skip to content</a>
-    <div className="navy"><header className="wrap header"><a className="brand" href="#main">John Wilson</a><nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#expertise">Expertise</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header></div>
+    <div className="navy site-header"><header className="wrap header"><a className="brand" href="#main">John Wilson</a><nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#expertise">Expertise</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header></div>
     <main id="main" tabIndex={-1}>
       <div className="navy"><section className="hero wrap" aria-labelledby="intro">
         <div className="hero-copy"><h1 id="intro">Business <span>clarity.</span><br /><span>Technical</span> depth.</h1><p className="role-line">CTO · Solution Architect · Software Developer</p><p className="hero-description">Connecting business strategy, AI and engineering.</p><div className="actions"><ContactLink /><CVLink className="button secondary" /></div></div>
