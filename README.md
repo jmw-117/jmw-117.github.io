@@ -1,6 +1,6 @@
 # John Wilson — executive résumé
 
-A static résumé at https://cv.jmw-muriuki.chatgpt.site, rendered from React at build time. The published page ships no browser JavaScript, remote fonts, analytics or contact-form service.
+A static résumé at https://jmw-117.github.io/, rendered from React at build time and hosted on GitHub Pages. The published page ships no browser JavaScript, remote fonts, analytics or contact-form service.
 
 ## Local work
 
@@ -20,7 +20,7 @@ The optional `JW_BUILD_MODULES` environment variable points to an alternative no
 - `app/globals.css`: shared colour, typography, spacing and layout tokens; responsive, focus, reduced-motion and print styles.
 - `app/layout.tsx` and `scripts/export-static.cjs`: metadata for framework development and static production.
 - `public/`: original portrait, original company/university logos, latest supplied CV and compressed architectural illustration.
-- `public/_headers`: requested static hosting response headers, including the CV attachment filename.
+- `public/_headers`: response-header configuration retained for the previous Sites host. GitHub Pages does not apply this file; same-origin CV links use the native HTML download attribute.
 
 Navy is #0e1828. Sans and monospace stacks follow the owner's exact supplied tokens and load system fonts only. Stronger heading weights and darker supporting text improve visual definition without text shadows or rasterised lettering. The page and social title is John Wilson | CTO; capability headings use AI Platforms, Cloud Architecture and Engineering Leadership.
 
@@ -39,9 +39,15 @@ NOT VERIFIED: field Core Web Vitals, real-user INP, Safari/Firefox rendering, as
 
 Evidence is retained in the chat's local visualization folder, including responsive screenshots, `qa-result.json`, `axe-results.json` and `lighthouse-mobile.json`.
 
-## Publishing and rollback
+## Branches, publishing and rollback
 
-Preserve the existing Sites identity and public audience in `.openai/hosting.json`. Use the Sites source helper to commit and push the exact tested source, package its matching static output, save that version and deploy it. Never include credentials or checkout-local runtime directories in source or archives. For rollback, redeploy the previously successful saved version through Sites.
+The repository is https://github.com/jmw-117/jmw-117.github.io. Its default and production branch is `main`. Agent work stays on `codex`; the owner's development branch is `develop`. `maintenance` and `upgrade` are reserved branches; no maintenance page has been implemented.
+
+GitHub Pages uses GitHub Actions rather than publishing the repository root. `.github/workflows/pages.yml` installs locked dependencies, checks the page/layout types, builds `dist/` and publishes that directory. Action versions are pinned to verified commits. Pull requests into `main` run build checks; only `main` can deploy to the `github-pages` environment. Manual runs on other branches cannot publish.
+
+Make changes on `codex` or `develop`, run the local checks, rebuild the tracked `dist/` output and open a pull request into `main`. Merging into `main` automatically publishes the site. Confirm that the Actions deployment succeeds, then check the live page, images and CV download. For rollback, revert the relevant release changes through a pull request into `main`; the resulting commit publishes automatically. Do not force-push shared branches.
+
+The production origin in `lib/site-content.json` supplies canonical, social, robots and sitemap URLs. No custom domain, runtime credentials or paid hosting is required. Preserve the previous Sites identity in `.openai/hosting.json` as historical configuration; it is not used by the GitHub Pages workflow. Never include credentials or checkout-local runtime directories in source or archives.
 
 ## Architectural image
 

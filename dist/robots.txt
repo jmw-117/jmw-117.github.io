@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://cv.jmw-muriuki.chatgpt.site/sitemap.xml
+Sitemap: https://jmw-117.github.io/sitemap.xml
