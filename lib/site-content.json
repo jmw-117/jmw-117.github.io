@@ -10,7 +10,7 @@
   "article": "https://businessnews.com.my/architecture-financial-trust-ai/",
   "careers": [
     {"company":"ImBalance ApS","logo":"/imbalance.png","role":"Chief Technology Officer","dates":"Aug 2023 – Present","summary":"AI wellbeing platforms. Architecture, strategy and delivery."},
-    {"company":"SEB","logo":"/seb.jpg","role":"Senior Software Developer / Front-End & DevOps Technical Lead","dates":"May 2017 – Jun 2023","summary":"Enterprise banking portals and cloud modernisation."},
+    {"company":"SEB","logo":"/seb.jpg","role":"Technical Lead & Senior Software Developer","dates":"May 2017 – Jun 2023","summary":"Enterprise banking portals and cloud modernisation."},
     {"company":"IRIS Corporation","logo":"/iris.jpg","role":"Software Developer","dates":"Aug 2013 – Apr 2017","summary":"National identity, e-passport and smart-card systems."}
   ],
   "certifications": ["Microsoft Azure Solutions Architect Expert", "Google Cloud Platform (GCP) Certified", "Databricks AI Agents Fundamentals", "Certified SAFe 4 Scrum Master"]
