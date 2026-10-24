@@ -42,7 +42,6 @@ function Portrait() {
         <text className="portrait-label" fill="var(--white)"><textPath href="#availability-label" startOffset="50%" textAnchor="middle">#OPENTOWORK</textPath></text>
       </svg>
     </div>
-    <label className="motion-control"><input type="checkbox" />Pause animation</label>
   </div>;
 }
 
