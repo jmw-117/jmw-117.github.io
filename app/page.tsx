@@ -26,20 +26,23 @@ function CVLink({ className = '' }: { className?: string }) {
 }
 
 function Portrait() {
-  return <div className="portrait" role="img" aria-label="John Wilson — open to work">
-    <img className="portrait-photo" src="/john-wilson.jpg" alt="" width="294" height="336" fetchPriority="high" decoding="async" />
-    <svg className="portrait-frame" viewBox="0 0 210 210" width="210" height="210" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="availability-ring" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="58%" stopColor="var(--available)" />
-          <stop offset="74%" stopColor="var(--frame-neutral)" />
-        </linearGradient>
-        <path id="availability-label" d="M11 105a94 94 0 0 0 188 0" />
-      </defs>
-      <circle cx="105" cy="105" r="103.5" fill="none" stroke="var(--white)" strokeWidth="3" />
-      <circle cx="105" cy="105" r="89" fill="none" stroke="url(#availability-ring)" strokeWidth="28" />
-      <text className="portrait-label" fill="var(--white)"><textPath href="#availability-label" startOffset="50%" textAnchor="middle">#OPENTOWORK</textPath></text>
-    </svg>
+  return <div className="portrait-wrap">
+    <div className="portrait" role="img" aria-label="John Wilson — open to work">
+      <img className="portrait-photo" src="/john-wilson.jpg" alt="" width="294" height="336" fetchPriority="high" decoding="async" />
+      <svg className="portrait-frame" viewBox="0 0 210 210" width="210" height="210" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="availability-ring" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="58%" stopColor="var(--available)" />
+            <stop offset="74%" stopColor="var(--frame-neutral)" />
+          </linearGradient>
+          <path id="availability-label" d="M11 105a94 94 0 0 0 188 0" />
+        </defs>
+        <circle cx="105" cy="105" r="103.5" fill="none" stroke="var(--white)" strokeWidth="3" />
+        <circle cx="105" cy="105" r="89" fill="none" stroke="url(#availability-ring)" strokeWidth="28" />
+        <text className="portrait-label" fill="var(--white)"><textPath href="#availability-label" startOffset="50%" textAnchor="middle">#OPENTOWORK</textPath></text>
+      </svg>
+    </div>
+    <label className="motion-control"><input type="checkbox" />Pause animation</label>
   </div>;
 }
 
