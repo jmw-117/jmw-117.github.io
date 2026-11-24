@@ -1,4 +1,4 @@
-name: Build and deploy résumé
+name: Build and deploy r�sum�
 
 on:
   push:
@@ -35,8 +35,11 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Check page types
         run: node node_modules/typescript/bin/tsc --noEmit --jsx react-jsx --moduleResolution bundler --module esnext --target es2018 --esModuleInterop --resolveJsonModule --skipLibCheck --strict app/page.tsx app/layout.tsx
-      - name: Build static résumé
+      - name: Build static r�sum�
         run: npm run build
+      - name: Verify portfolio navigation and layout
+        timeout-minutes: 2
+        run: node scripts/check-portfolio.cjs
       - name: Configure GitHub Pages
         if: github.ref == 'refs/heads/main'
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
